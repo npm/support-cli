@@ -5,9 +5,9 @@ Many common problems can be solved with one of these steps:
 
 ## Try the latest stable version of node
 
-Node 0.4 and 0.6 are [no longer supported](https://github.com/npm/npm/issues/4379#issuecomment-31183058).
+Node 0.4, 0.6 and 0.8 [no longer supported](https://github.com/npm/npm/blob/master/CHANGELOG.md#goodbye-faithful-friend).
 
-If you're experiencing issues while using a version of node which is unsupported (e.g 0.4.x or 0.6.x) or unstable (odd numbered versions e.g. 0.7.x, 0.9.x, 0.11.x), it's very possible your issue will be fixed by simply [using the latest stable version of node](https://gist.github.com/isaacs/579814)!
+If you're experiencing issues while using a version of node which is unsupported (e.g 0.6.x or 0.8.x) or unstable (odd numbered versions e.g. 0.7.x, 0.9.x, 0.11.x), it's very possible your issue will be fixed by simply [using the latest stable version of node](https://gist.github.com/isaacs/579814)!
 
 ### See what version of node you're running:
 
@@ -110,14 +110,14 @@ npm ERR! code EACCES
 
 ### Travis projects using 0.8 can't upgrade to npm 2
 
-In your `.travis.yml` replace this: 
+In your `.travis.yml` replace this:
 
 ``` yaml
 before_install:
 - npm install -g npm@latest
 ```
 
-with this: 
+with this:
 
 ``` yaml
 before_install:
@@ -157,12 +157,12 @@ You need to [install git](http://git-scm.com/book/en/Getting-Started-Installing-
 **[@LaurentGoderre](https://github.com/LaurentGoderre)** fixed this with [some Git trickery](https://github.com/npm/npm/issues/5257#issuecomment-60441477):
 
 > I fixed this issue for several of my colleagues by running the following two commands:
-> 
+>
 > ```
 > git config --global url."https://github.com/".insteadOf git@github.com:
 > git config --global url."https://".insteadOf git://
 > ```
-> 
+>
 > One thing we noticed is that the `.gitconfig` used is not always the one expected so if you are on a machine that modified the home path to a shared drive, you need to ensure that your `.gitconfig` is the same on both your shared drive and in `c:\users\[your user]\`
 
 ### SSL Error
@@ -226,7 +226,7 @@ npm ERR! registry error parsing json
 ```
 
 * Possible temporary npm registry glitch, or corrupted local server cache.
-Run `npm cache clean` and/or try again later. 
+Run `npm cache clean` and/or try again later.
 * This can be caused by corporate proxies that give HTML
 responses to `package.json` requests. Check npm's proxy [configuration](https://npmjs.org/doc/misc/npm-config.html).
 * Check that it's not a problem with a package you're trying to install
